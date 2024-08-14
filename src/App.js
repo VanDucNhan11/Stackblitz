@@ -3,16 +3,10 @@ import './App.css';
 
 function generateRandomPosition(size, boardWidth, boardHeight) {
   const positions = [];
-  const minDistance = 60;
   while (positions.length < size) {
-    const x = Math.floor(Math.random() * (boardWidth - 60)) + 10;
-    const y = Math.floor(Math.random() * (boardHeight - 60)) + 10;
-    const overlap = positions.some(pos => 
-      Math.abs(pos.x - x) < minDistance && Math.abs(pos.y - y) < minDistance
-    );
-    if (!overlap) {
-      positions.push({ x, y });
-    }
+    const x = Math.floor(Math.random() * (boardWidth - 60));
+    const y = Math.floor(Math.random() * (boardHeight - 60));
+    positions.push({ x, y });
   }
   return positions;
 }
